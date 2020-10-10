@@ -35,7 +35,8 @@ void setup(){
         total += myDieNum;
       }
       void show(){
-        fill(255);
+        fill((int)(Math.random()*250 + 50), (int)(Math.random()*250 + 50), (int)(Math.random()*250 + 50));
+        strokeWeight(2);
         rect(myX, myY, 50, 50, 10);
         fill(0);
     if (myDieNum == 1) {
