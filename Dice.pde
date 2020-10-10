@@ -1,4 +1,7 @@
 int total;
+int r = 255;
+int g = 255;
+int b = 255;
 void setup(){
       noLoop();
       size(250, 350);
@@ -6,7 +9,7 @@ void setup(){
   }
   void draw(){
     int i, j, myI, myJ; 
-      background(197);
+      background(218, 222, 227);
       for(i=0;i<3;i++){
         for(j=0;j<3;j++){
           myI = (90 * i) + 10;
@@ -22,11 +25,14 @@ void setup(){
   void mousePressed(){
       total = 0;
       redraw();
+      r=(int)(Math.random()*150 + 50);
+      g=(int)(Math.random()*150 + 50);
+      b=(int)(Math.random()*150 + 50);
   }
-  class Die{ //models one single dice cube
-      int myX, myY, myDieNum; //member variable declarations
-      Die(int x, int y, int dieNum){ //constructor
-          myX = x; //variable initializations
+  class Die{ 
+      int myX, myY, myDieNum; 
+      Die(int x, int y, int dieNum){ 
+          myX = x; 
           myY = y;
           myDieNum = dieNum;
       }
@@ -35,10 +41,11 @@ void setup(){
         total += myDieNum;
       }
       void show(){
-        fill((int)(Math.random()*250 + 50), (int)(Math.random()*250 + 50), (int)(Math.random()*250 + 50));
+        fill(r,g,b);
         strokeWeight(2);
+        stroke(r-150,g-150,b-150);
         rect(myX, myY, 50, 50, 10);
-        fill(0);
+        fill(r-150,g-150,b-150);
     if (myDieNum == 1) {
       ellipse(myX+25, myY+25, 10, 10);
     }
