@@ -1,7 +1,7 @@
 int total;
 void setup(){
       noLoop();
-      size(600, 600);
+      size(250, 350);
       total=0;
   }
   void draw(){
@@ -16,7 +16,7 @@ void setup(){
           one.show();
         }
       } 
-     textSize(16);
+     textSize(15);
       text("The total number of dots is: " + total,10,300);
   }
   void mousePressed(){
